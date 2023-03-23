@@ -33,3 +33,6 @@ def filter_numbers(numbers_list, filter_types):
     """
     if filter_types == ODD:
         return [number for number in numbers_list if number %2 != 0]
+    if filter_types == EVEN:
+        return [number for number in numbers_list if number %2 == 0]
+
