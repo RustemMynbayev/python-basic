@@ -20,11 +20,11 @@ EVEN = "even"
 PRIME = "prime"
 
 
-def is_prime(a):
-    if a % a == 0 and a != 0:
-        return True
-    else:
-        return False
+def filter_odd_num(filter_numbers):
+    i = 2
+    while filter_numbers % i != 0:
+        i += 1
+    return i == filter_numbers
 
 
 def filter_numbers(numbers_list, filter_types):
@@ -37,13 +37,12 @@ def filter_numbers(numbers_list, filter_types):
     <<< [1, 3]
     >>> filter_numbers([2, 3, 4, 5], EVEN)
     <<< [2, 4]
+    >>> filter_numbers([2, 3, 4, 5], PRIME)
+    <<< [2, 4]
     """
     if filter_types == ODD:
         return [number for number in numbers_list if number % 2 != 0]
     if filter_types == EVEN:
         return [number for number in numbers_list if number % 2 == 0]
     if filter_types == PRIME:
-        return [number for number in numbers_list if number == True]
-
-
-
+        return [number for number in numbers_list if number % number == 0]
